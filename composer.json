@@ -16,5 +16,13 @@
     "minimum-stability": "stable",
     "require": {
         "illuminate/support": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.10"
+    },
+    "scripts": {
+        "tests": [
+            "vendor/bin/phpunit"
+        ]
     }
 }
