@@ -2,12 +2,16 @@
 
 Некоторые файлы для распространения между Laravel проектами.
 
-## Buglerv\LaravelHelpers\Traits\ChainableMethods
+- [ChainableMethods](https://github.com/BuglerV/laravel-helpers#buglervlaravelhelperstraitschainablemethods)
+- [GroupEagerLoading](https://github.com/BuglerV/laravel-helpers#buglervlaravelhelperseloquentgroupeagerloading)
+
+### Buglerv\LaravelHelpers\Traits\ChainableMethods
 
 Трейт используется для того, чтобы объединять методы класса в цепочку для последовательного вызова.
 
 ```php
-class A{
+class A
+{
   use \Buglerv\LaravelHelpers\Traits\ChainableMethods;
 
   protected $count = 2;
@@ -44,13 +48,13 @@ var_dump($a->addAndFalse()); // bool(false)
 var_dump($a->subOrTrue()); // bool(true)
 ```
 
-## Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading
+### Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading
 
 Используется для ручной загрузки отношений Eloquent моделей.
 
 Допустим, есть модель `Project` у которой есть 2 отношения на модель `Person` через методы `frontendProgrammer` и `backendProgrammer`. Через `Project::load()` можно загрузить оба отношения, но каждое из них в любом случае будет подгружаться через отдельное обращение к базе данных. Так можно добиться одного запроса:
 ```php
-$model = Project::all();
+$models = Project::all();
 
 \Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading::load($models,Person::class,[
     'frontendProgrammer' => 'frontend_programmer_id',
