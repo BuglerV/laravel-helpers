@@ -69,10 +69,10 @@ $models = Project::all();
 
 Можно подгрузить модели с дополнительными отношениями:
 ```php
-\Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading::loadWith(...,Project::class);
+\Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading::loadWith(...,'projects');
 ```
 
 Или объединить оба варианта:
 ```php
-\Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading::loadTrashedWith(...,Project::class);
+\Buglerv\LaravelHelpers\Eloquent\GroupEagerLoading::loadTrashedWith(...,'projects');
 ```
